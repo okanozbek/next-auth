@@ -11,7 +11,9 @@ export default function LoginPanel() {
         <>
           <p className="text-lg">Giriş yapmadınız.</p>
           <button
-            onClick={() => { signIn('auth0'); console.log('Giriş yapılıyor...'); }}
+            onClick={() => {
+              signIn('auth0');
+            }}
             className="bg-blue-600 text-white px-4 py-2 rounded"
           >
             Auth0 ile Giriş Yap

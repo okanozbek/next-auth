@@ -1,4 +1,4 @@
-import LoginPanel from "./LoginPanel";
+import LoginPanel from './LoginPanel';
 
 export default function LoginPage() {
   return (
