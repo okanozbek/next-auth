@@ -1,7 +1,7 @@
-import NextAuth from 'next-auth';
+import NextAuth, { SessionStrategy } from 'next-auth';
 import Auth0Provider from 'next-auth/providers/auth0';
 
-const handler = NextAuth({
+export const authOptions = {
   providers: [
     Auth0Provider({
       clientId: process.env.AUTH0_CLIENT_ID!,
@@ -10,12 +10,13 @@ const handler = NextAuth({
     }),
   ],
   session: {
-    strategy: 'jwt',
+    strategy: 'jwt' as SessionStrategy,
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: '/login',
   },
-});
+};
 
+const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
